@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _pauseService = FindObjectOfType<PauseService>();
     }
-    
+
     void Update()
     {
         if (_pauseService.IsPaused)
@@ -27,10 +27,9 @@ public class PlayerMovement : MonoBehaviour
             Vector3 mousePositionInUnits = Camera.main.ScreenToWorldPoint(mousePositionInPixels);
             Vector3 currentPosition = transform.position;
             currentPosition.x = mousePositionInUnits.x;
-            transform.position = currentPosition; 
-        } 
+            transform.position = currentPosition;
+        }
     }
 
     #endregion
-  
 }
