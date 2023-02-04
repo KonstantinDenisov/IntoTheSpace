@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovementService : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     #region Variables
 
