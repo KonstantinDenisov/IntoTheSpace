@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Lean.Pool;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -28,11 +29,11 @@ public class Bullet : MonoBehaviour
         if (col.CompareTag(Tags.EnemyAndPlayer))
         {
             HP hp = col.gameObject.GetComponentInParent<HP>();
+            
             if (hp != null)
             { 
                 hp.ApplyDamage(_damage);
             }
-            
         }
     }
 
@@ -44,7 +45,13 @@ public class Bullet : MonoBehaviour
     private IEnumerator LifeTimeTimer()
     {
         yield return new WaitForSeconds(_lifeTime);
-        Destroy(gameObject);
+       Destroy(gameObject);
+       //Despawn();
+    }
+
+    private void Despawn()
+    {
+        LeanPool.Despawn(gameObject);
     }
 
     #endregion
