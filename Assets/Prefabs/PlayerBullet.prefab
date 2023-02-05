@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: -3465905054037618854}
   - component: {fileID: -378443885330605880}
   m_Layer: 0
-  m_Name: Projectile Sharp
-  m_TagString: Bullet
+  m_Name: PlayerBullet
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

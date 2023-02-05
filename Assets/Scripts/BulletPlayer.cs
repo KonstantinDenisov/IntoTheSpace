@@ -3,7 +3,7 @@ using Lean.Pool;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Bullet : MonoBehaviour
+public class BulletPlayer : MonoBehaviour
 {
     #region Variables
 
@@ -26,13 +26,13 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag(Tags.EnemyAndPlayer))
+        if (col.CompareTag(Tags.Enemy))
         {
-            HP hp = col.gameObject.GetComponentInParent<HP>();
+            EnemyHP enemyHp = col.gameObject.GetComponentInParent<EnemyHP>();
             
-            if (hp != null)
+            if (enemyHp != null)
             { 
-                hp.ApplyDamage(_damage);
+                enemyHp.ApplyDamage(_damage);
             }
         }
     }

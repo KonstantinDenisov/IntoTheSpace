@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class HP : MonoBehaviour
+public class EnemyHP : MonoBehaviour
 {
     #region Variables
 
