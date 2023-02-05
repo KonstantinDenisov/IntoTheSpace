@@ -2,7 +2,7 @@
 using Lean.Pool;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class BulletEnemy : MonoBehaviour
 {
     #region Variables
 
