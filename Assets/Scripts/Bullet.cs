@@ -28,7 +28,11 @@ public class Bullet : MonoBehaviour
         if (col.CompareTag(Tags.EnemyAndPlayer))
         {
             HP hp = col.gameObject.GetComponentInParent<HP>();
-            hp.ApplyDamage(_damage);
+            if (hp != null)
+            { 
+                hp.ApplyDamage(_damage);
+            }
+            
         }
     }
 
