@@ -25,10 +25,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag(Tags.Enemy))
+        if (col.CompareTag(Tags.EnemyAndPlayer))
         {
-            EnemyHP enemyHp = col.gameObject.GetComponentInParent<EnemyHP>();
-            enemyHp.ApplyDamage(_damage);
+            HP hp = col.gameObject.GetComponentInParent<HP>();
+            hp.ApplyDamage(_damage);
         }
     }
 
