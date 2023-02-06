@@ -19,7 +19,7 @@ public class BulletEnemy : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _rb.velocity = transform.up * _speed;
+        _rb.velocity = transform.up * _speed *-1;
         StartCoroutine(LifeTimeTimer());
     }
 
