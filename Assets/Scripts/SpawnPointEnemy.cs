@@ -33,6 +33,8 @@ public class SpawnPointEnemy : MonoBehaviour
 
    private IEnumerator Spawn1()
    {
+      yield return new WaitForSeconds(_timeWaveSpawn);
+      
       for (int i = 0; i < _enemyV1Quantity; i++)
       {
          Instantiate(_enemyV1, transform.position, Quaternion.identity);

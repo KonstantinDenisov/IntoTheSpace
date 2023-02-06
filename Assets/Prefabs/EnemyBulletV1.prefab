@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 21200000}
   - component: {fileID: 6100000}
   - component: {fileID: -3465905054037618854}
-  - component: {fileID: -378443885330605880}
+  - component: {fileID: 6182420090907385505}
   m_Layer: 0
   m_Name: EnemyBulletV1
   m_TagString: EnemyBullet
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 31d8a46be10bcd3409183a6525fc1635, type: 3}
   m_Color: {r: 1, g: 0.66176474, b: 0.66176474, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-378443885330605880
+--- !u!114 &6182420090907385505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ddf48b203040c685035772056544d5, type: 3}
+  m_Script: {fileID: 11500000, guid: acc92a9331664eec9696e18ef9ddd3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
-  _lifeTime: 5
+  _speed: 1
+  _lifeTime: 10
   _damage: 1
