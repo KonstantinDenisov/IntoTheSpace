@@ -638,15 +638,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a451f958d5384ee42aaacedf909eb0ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameWinScreen: {fileID: 0}
-  _gameOverLabel: {fileID: 0}
+  _gameWinScreen: {fileID: 1180916921}
+  _gameOverLabel: {fileID: 961236323}
   _pauseImage: {fileID: 1040752605}
-  _playAgainButton: {fileID: 0}
-  _resumeToGameButton: {fileID: 0}
-  _exitButtonGameOver: {fileID: 0}
-  _exitButtonPause: {fileID: 0}
-  _exitGameWinScreen: {fileID: 0}
-  _restartGameButtonGameOver: {fileID: 0}
+  _playAgainButton: {fileID: 1805593503}
+  _resumeToGameButton: {fileID: 1468123518}
+  _exitButtonGameOver: {fileID: 1579495816}
+  _exitButtonPause: {fileID: 1271155359}
+  _exitGameWinScreen: {fileID: 1430323003}
+  _restartGameButtonGameOver: {fileID: 2039669456}
 --- !u!1 &694126133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,7 +2476,7 @@ GameObject:
   - component: {fileID: 1805593504}
   - component: {fileID: 1805593503}
   m_Layer: 5
-  m_Name: ResumeToGameButtonGameWn
+  m_Name: PlayAgainButtonGameWn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2813,7 +2813,7 @@ GameObject:
   - component: {fileID: 2039669457}
   - component: {fileID: 2039669456}
   m_Layer: 5
-  m_Name: ResumeToGameButton
+  m_Name: RestartGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
