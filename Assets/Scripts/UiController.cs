@@ -44,7 +44,6 @@ public class UiController : MonoBehaviour
     {
         _pauseService = FindObjectOfType<PauseService>();
         _pauseService.OnPaused += Paused;
-
         _statisticsService = FindObjectOfType<StatisticsService>();
         _statisticsService.OnGameOver += GameOver;
         _statisticsService.OnGameWinn += GameWin;
