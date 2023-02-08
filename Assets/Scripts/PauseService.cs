@@ -28,9 +28,9 @@ public class PauseService : MonoBehaviour
     #endregion
 
 
-    #region Private Methods
+    #region Public Methods
 
-    private void PauseSwitcher()
+    public void PauseSwitcher()
     {
         IsPaused = !IsPaused;
         Time.timeScale = IsPaused ? 0 : 1;

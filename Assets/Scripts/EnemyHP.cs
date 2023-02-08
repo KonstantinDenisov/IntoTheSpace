@@ -7,6 +7,7 @@ public class EnemyHP : MonoBehaviour
 
     [SerializeField] private int _startHp;
     private int _currentHP;
+    private StatisticsService _statisticsService;
 
     #endregion
     
@@ -15,6 +16,11 @@ public class EnemyHP : MonoBehaviour
     private void Awake()
     {
         _currentHP = _startHp;
+    }
+
+    private void Start()
+    {
+        _statisticsService = FindObjectOfType<StatisticsService>();
     }
 
     #endregion
@@ -26,9 +32,11 @@ public class EnemyHP : MonoBehaviour
     {
         _currentHP = _currentHP - damage;
         if (_currentHP <= 0)
-            Destroy(gameObject);
+        {
+            _statisticsService.ChangeScore(_startHp);
+            Destroy(gameObject); 
+        }
     }
-    
 
     #endregion
 }
