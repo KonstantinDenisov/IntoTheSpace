@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -6,6 +7,13 @@ public class PlayerHP : MonoBehaviour
 
     [SerializeField] private int _startHp;
     private int _currentHP;
+
+    #endregion
+
+
+    #region Events
+
+    public event Action<int> OnHPChenge; 
 
     #endregion
 
@@ -26,7 +34,10 @@ public class PlayerHP : MonoBehaviour
     {
         _currentHP = _currentHP - damage;
         if (_currentHP <= 0)
+        {
             Destroy(gameObject);
+        }
+        OnHPChenge?.Invoke(_currentHP);
     }
 
     #endregion

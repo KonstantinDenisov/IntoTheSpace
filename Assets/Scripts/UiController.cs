@@ -39,8 +39,9 @@ public class UiController : MonoBehaviour
         _gameWinScreen.SetActive(false);
         _gameOverLabel.SetActive(false);
         _pauseImage.SetActive(false);
+        _HUD.SetActive(false);
         _startImage.SetActive(true);
-        _HUD.SetActive(true);
+        
 
         _restartGameButtonGameOver.onClick.AddListener(RestartGameButtonCliced);
         _playAgainButton.onClick.AddListener(RestartGameButtonCliced);
@@ -117,14 +118,19 @@ public class UiController : MonoBehaviour
     private void CreateSpaceShipV1()
     {
         Instantiate(_spaceShipV1Prefab, _spawnPointPlayer.transform.position, Quaternion.identity);
-        _startImage.SetActive(false);
-        _pauseService.PauseSwitcher();
+        StartGame();
     }
 
     private void CreateSpaceShipV2()
     {
         Instantiate(_spaceShipV2Prefab, _spawnPointPlayer.transform.position, Quaternion.identity);
+        StartGame();
+    }
+
+    private void StartGame()
+    {
         _startImage.SetActive(false);
+        _HUD.SetActive(true);
         _pauseService.PauseSwitcher();
     }
 
