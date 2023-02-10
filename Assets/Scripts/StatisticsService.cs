@@ -15,6 +15,7 @@ public class StatisticsService : MonoBehaviour
 
     public event Action OnGameOver;
     public event Action OnGameWinn;
+    public event Action OnUpDateScore;
 
     #endregion
     
@@ -28,6 +29,7 @@ public class StatisticsService : MonoBehaviour
     public void ChangeScore(int score)
     {
         Points += score;
+        OnUpDateScore?.Invoke();
     }
 
     #endregion
