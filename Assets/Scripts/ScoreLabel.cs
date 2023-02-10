@@ -25,6 +25,7 @@ public class ScoreLabel : MonoBehaviour
     {
         _statisticsService = FindObjectOfType<StatisticsService>();
         _statisticsService.OnUpDateScore += ChangeScore;
+        ChangeScore();
     }
 
     #endregion

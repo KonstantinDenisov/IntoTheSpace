@@ -7,6 +7,7 @@ public class PlayerHP : MonoBehaviour
 
     [SerializeField] private int _startHp;
     private int _currentHP;
+    private UiController _uiController;
 
     #endregion
 
@@ -25,6 +26,12 @@ public class PlayerHP : MonoBehaviour
         _currentHP = _startHp;
     }
 
+    private void Start()
+    {
+        _uiController = FindObjectOfType<UiController>();
+        OnHPChenge?.Invoke(_currentHP);
+    }
+
     #endregion
 
 
@@ -35,6 +42,7 @@ public class PlayerHP : MonoBehaviour
         _currentHP = _currentHP - damage;
         if (_currentHP <= 0)
         {
+            _uiController.GameOver();
             Destroy(gameObject);
         }
         OnHPChenge?.Invoke(_currentHP);

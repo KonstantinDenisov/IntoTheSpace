@@ -58,9 +58,7 @@ public class UiController : MonoBehaviour
         _pauseService = FindObjectOfType<PauseService>();
         _pauseService.OnPaused += Paused;
         _statisticsService = FindObjectOfType<StatisticsService>();
-        _statisticsService.OnGameOver += GameOver;
-        _statisticsService.OnGameWinn += GameWin;
-        
+
         _pauseService.PauseSwitcher();
     }
 
@@ -69,6 +67,26 @@ public class UiController : MonoBehaviour
         _pauseService.OnPaused -= Paused;
         _statisticsService.OnGameOver -= GameOver;
         _statisticsService.OnGameWinn -= GameWin;
+    }
+
+    #endregion
+
+
+    #region Public Methods
+
+    public void GameWin()
+    {
+        _gameWinScreen.SetActive(true);  
+        _pauseService.PauseSwitcher();
+        //AudioPlayer.AddWinAudioClip();
+    }
+
+    public void GameOver()
+    { 
+        _HUD.SetActive(false);
+        _gameOverLabel.SetActive(true);
+        _pauseService.PauseSwitcher();
+        //AudioPlayer.AddGameOverAudioClip();
     }
 
     #endregion
@@ -99,20 +117,6 @@ public class UiController : MonoBehaviour
     private void Paused(bool isPaused)
     {
         _pauseImage.SetActive(isPaused);
-    }
-
-    private void GameWin()
-    {
-        _gameWinScreen.SetActive(true);  
-        _pauseService.PauseSwitcher();
-        //AudioPlayer.AddWinAudioClip();
-    }
-
-    private void GameOver()
-    { 
-        _gameOverLabel.SetActive(true);
-        _pauseService.PauseSwitcher();
-        //AudioPlayer.AddGameOverAudioClip();
     }
 
     private void CreateSpaceShipV1()

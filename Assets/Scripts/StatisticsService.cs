@@ -18,6 +18,16 @@ public class StatisticsService : MonoBehaviour
     public event Action OnUpDateScore;
 
     #endregion
+
+
+    #region Unity LifeCycle
+
+    private void Start()
+    {
+        OnUpDateScore?.Invoke();
+    }
+
+    #endregion
     
     #region Public Methods
 
