@@ -22,6 +22,10 @@ public class UiController : MonoBehaviour
     [SerializeField] private Button _spaceshipV1;
     [SerializeField] private Button _spaceshipV2;
 
+    [SerializeField] private GameObject _spawnPointPlayer;
+    [SerializeField] private GameObject _spaceShipV1Prefab;
+    [SerializeField] private GameObject _spaceShipV2Prefab;
+
     private PauseService _pauseService;
     private StatisticsService _statisticsService;
     
@@ -55,6 +59,8 @@ public class UiController : MonoBehaviour
         _statisticsService = FindObjectOfType<StatisticsService>();
         _statisticsService.OnGameOver += GameOver;
         _statisticsService.OnGameWinn += GameWin;
+        
+        _pauseService.PauseSwitcher();
     }
 
     private void OnDestroy()
@@ -108,14 +114,18 @@ public class UiController : MonoBehaviour
         //AudioPlayer.AddGameOverAudioClip();
     }
 
-    private void CreateSpaceShipV2()
-    {
-        throw new System.NotImplementedException();
-    }
-
     private void CreateSpaceShipV1()
     {
-        throw new System.NotImplementedException();
+        Instantiate(_spaceShipV1Prefab, _spawnPointPlayer.transform.position, Quaternion.identity);
+        _startImage.SetActive(false);
+        _pauseService.PauseSwitcher();
+    }
+
+    private void CreateSpaceShipV2()
+    {
+        Instantiate(_spaceShipV2Prefab, _spawnPointPlayer.transform.position, Quaternion.identity);
+        _startImage.SetActive(false);
+        _pauseService.PauseSwitcher();
     }
 
     #endregion
