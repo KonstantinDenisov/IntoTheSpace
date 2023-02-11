@@ -8,6 +8,7 @@ public class AudioService : MonoBehaviour
 
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _theSoundOfAGunshotClip;
+    public bool OFF;
 
     #endregion
 
@@ -19,6 +20,11 @@ public class AudioService : MonoBehaviour
         if (audioClip == null)
             return;
         
+        if (OFF)
+        {
+            return;
+        }
+
         _audioSource.PlayOneShot(audioClip);
     }
 

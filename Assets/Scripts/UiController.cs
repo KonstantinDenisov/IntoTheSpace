@@ -21,6 +21,8 @@ public class UiController : MonoBehaviour
     [SerializeField] private Button _restartGameButtonGameOver;
     [SerializeField] private Button _spaceshipV1;
     [SerializeField] private Button _spaceshipV2;
+    [SerializeField] private Button _audioServiceON;
+    [SerializeField] private Button _audioServiceOFF;
 
     [SerializeField] private GameObject _spawnPointPlayer;
     [SerializeField] private GameObject _spaceShipV1Prefab;
@@ -30,6 +32,7 @@ public class UiController : MonoBehaviour
 
     private PauseService _pauseService;
     private StatisticsService _statisticsService;
+    private AudioService _audioService;
     
     #endregion
 
@@ -53,6 +56,8 @@ public class UiController : MonoBehaviour
         _exitGameWinScreen.onClick.AddListener(ExitButtonCliced);
         _spaceshipV1.onClick.AddListener(CreateSpaceShipV1);
         _spaceshipV2.onClick.AddListener(CreateSpaceShipV2);
+        _audioServiceON.onClick.AddListener(AudioServiceON);
+        _audioServiceOFF.onClick.AddListener(AudioServiceOFF);
     }
 
     private void Start()
@@ -60,6 +65,7 @@ public class UiController : MonoBehaviour
         _pauseService = FindObjectOfType<PauseService>();
         _pauseService.OnPaused += Paused;
         _statisticsService = FindObjectOfType<StatisticsService>();
+        _audioService = FindObjectOfType<AudioService>();
 
         _pauseService.PauseSwitcher();
     }
@@ -139,6 +145,16 @@ public class UiController : MonoBehaviour
         _startImage.SetActive(false);
         _HUD.SetActive(true);
         _pauseService.PauseSwitcher();
+    }
+
+    private void AudioServiceON()
+    {
+        _audioService.OFF = false;
+    }
+    
+    private void AudioServiceOFF()
+    {
+        _audioService.OFF = true;
     }
 
     #endregion
