@@ -26,6 +26,8 @@ public class UiController : MonoBehaviour
     [SerializeField] private GameObject _spaceShipV1Prefab;
     [SerializeField] private GameObject _spaceShipV2Prefab;
 
+    [SerializeField] private SceneLoadingService _sceneLoadingService;
+
     private PauseService _pauseService;
     private StatisticsService _statisticsService;
     
@@ -107,6 +109,7 @@ public class UiController : MonoBehaviour
     {
         _pauseService.PauseSwitcher();
         _statisticsService.ResetStatistics();
+        _sceneLoadingService.ReloadScene();
     }
 
     private void ResumeToGameButtonCliced()
