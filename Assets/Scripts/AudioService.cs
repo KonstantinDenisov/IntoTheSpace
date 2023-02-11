@@ -17,13 +17,8 @@ public class AudioService : MonoBehaviour
 
     public void PlaySound(AudioClip audioClip)
     {
-        if (audioClip == null)
+        if (audioClip == null || OFF)
             return;
-        
-        if (OFF)
-        {
-            return;
-        }
 
         _audioSource.PlayOneShot(audioClip);
     }
