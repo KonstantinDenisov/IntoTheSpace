@@ -17,26 +17,24 @@ public class CharacterUI : MonoBehaviour
 
     private void Start()
     {
-        throw new NotImplementedException();
+        _enemyHp.OnHPChenge += HpChanged;
+    }
+
+    private void OnDestroy()
+    {
+        _enemyHp.OnHPChenge -= HpChanged;
     }
 
     #endregion
 
 
-    //   _health.OnChanged += HpChanged;
-         //   HpChanged(_health.CurrentHp);
-    
-         
-
-    private void OnDestroy()
-    {
-       // if (_health != null)
-          //  _health.OnChanged -= HpChanged;
-    }
+    #region Private Methods
 
     private void HpChanged(int currentHp)
     {
-      //  float fillAmount = currentHp / (float) _health.MaxHp;
-       // _hpBar.SetFill(fillAmount);
+        float fillAmount = currentHp / (float) _enemyHp.StartHp;
+        _hpBar.SetFill(fillAmount);
     }
+
+    #endregion
 }

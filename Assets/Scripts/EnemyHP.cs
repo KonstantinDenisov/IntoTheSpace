@@ -5,9 +5,16 @@ public class EnemyHP : MonoBehaviour
 {
     #region Variables
 
-    [SerializeField] private int _startHp;
+    [SerializeField] public int StartHp;
     private int _currentHP;
     private StatisticsService _statisticsService;
+
+    #endregion
+
+
+    #region Events
+
+    public event Action<int> OnHPChenge; 
 
     #endregion
     
@@ -15,7 +22,7 @@ public class EnemyHP : MonoBehaviour
 
     private void Awake()
     {
-        _currentHP = _startHp;
+        _currentHP = StartHp;
     }
 
     private void Start()
@@ -33,9 +40,10 @@ public class EnemyHP : MonoBehaviour
         _currentHP = _currentHP - damage;
         if (_currentHP <= 0)
         {
-            _statisticsService.ChangeScore(_startHp);
+            _statisticsService.ChangeScore(StartHp);
             Destroy(gameObject); 
         }
+        OnHPChenge?.Invoke(_currentHP);
     }
 
     #endregion
