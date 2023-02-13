@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnPointEnemy : MonoBehaviour
 {
+   #region Variables
+
    [SerializeField] private float _timeEnemySpawn;
    [SerializeField] private float _timeWaveSpawn;
    
@@ -25,21 +27,47 @@ public class SpawnPointEnemy : MonoBehaviour
    [SerializeField] private int _enemyV7Quantity;
    [SerializeField] private int _enemyV8Quantity;
 
+   private UiController _uiController;
+
+   #endregion
+
+   #region Unity Life Cycle
 
    private void Start()
    {
+      _uiController = FindObjectOfType<UiController>();
+      
       StartCoroutine(Spawn1());
    }
 
+   #endregion
+
+
+   #region Private Methods
+
    private IEnumerator Spawn1()
    {
-      yield return new WaitForSeconds(_timeWaveSpawn);
+      yield return new WaitForSeconds(5);
       
       for (int i = 0; i < _enemyV1Quantity; i++)
       {
          Instantiate(_enemyV1, transform.position, Quaternion.identity);
          yield return new WaitForSeconds(_timeEnemySpawn);
       }
-      
+
+      StartCoroutine(Spawn2());
    }
+
+   private IEnumerator Spawn2()
+   {
+      yield return new WaitForSeconds(_timeWaveSpawn);
+      
+      for (int i = 0; i < _enemyV2Quantity; i++)
+      {
+         Instantiate(_enemyV2, transform.position, Quaternion.identity);
+         yield return new WaitForSeconds(_timeEnemySpawn);
+      }
+   }
+
+   #endregion
 }
