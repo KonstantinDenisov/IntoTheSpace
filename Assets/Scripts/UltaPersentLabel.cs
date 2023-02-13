@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,8 +5,8 @@ public class UltaPersentLabel : MonoBehaviour
 {
     #region Variables
 
-    private TextMeshProUGUI _HPLabel;
-    private PlayerHP _playerHp;
+    private TextMeshProUGUI _ultaPersentLabel;
+    private UltaService _ultaService;
 
     #endregion
 
@@ -17,22 +15,22 @@ public class UltaPersentLabel : MonoBehaviour
     
     private void Awake()
     {
-        _HPLabel = GetComponent<TextMeshProUGUI>();
+        _ultaPersentLabel = GetComponent<TextMeshProUGUI>();
     }
 
     private void Start()
     {
-        _playerHp = FindObjectOfType<PlayerHP>();
-        _playerHp.OnHPChenge += ChangeScore;
+        _ultaService = FindObjectOfType<UltaService>();
+        _ultaService.OnUltaPersentChenget += UltaPersentChenget;
     }
 
     #endregion
 
     #region Private Methods
 
-    private void ChangeScore(int hp)
+    private void UltaPersentChenget(int persent)
     {
-        _HPLabel.text = $"Player HP: {hp}";
+        _ultaPersentLabel.text = $"ulta ready: {persent} %";
     }
 
     #endregion
