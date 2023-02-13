@@ -80,6 +80,8 @@ public class SpawnPointEnemy : MonoBehaviour
          Instantiate(_enemyV3, transform.position, Quaternion.identity);
          yield return new WaitForSeconds(_timeEnemySpawn);
       }
+      
+      StartCoroutine(Spawn4());
    }
    
    private IEnumerator Spawn4()
@@ -91,6 +93,60 @@ public class SpawnPointEnemy : MonoBehaviour
          Instantiate(_enemyV4, transform.position, Quaternion.identity);
          yield return new WaitForSeconds(_timeEnemySpawn);
       }
+      
+      StartCoroutine(Spawn5());
+   }
+   
+   private IEnumerator Spawn5()
+   {
+      yield return new WaitForSeconds(_timeWaveSpawn);
+      
+      for (int i = 0; i < _enemyV5Quantity; i++)
+      {
+         Instantiate(_enemyV5, transform.position, Quaternion.identity);
+         yield return new WaitForSeconds(_timeEnemySpawn);
+      }
+      
+      StartCoroutine(Spawn6());
+   }
+   private IEnumerator Spawn6()
+   {
+      yield return new WaitForSeconds(_timeWaveSpawn);
+      
+      for (int i = 0; i < _enemyV6Quantity; i++)
+      {
+         Instantiate(_enemyV6, transform.position, Quaternion.identity);
+         yield return new WaitForSeconds(_timeEnemySpawn);
+      }
+      
+      StartCoroutine(Spawn7());
+   }
+   
+   private IEnumerator Spawn7()
+   {
+      yield return new WaitForSeconds(_timeWaveSpawn);
+      
+      for (int i = 0; i < _enemyV7Quantity; i++)
+      {
+         Instantiate(_enemyV7, transform.position, Quaternion.identity);
+         yield return new WaitForSeconds(_timeEnemySpawn);
+      }
+      
+      StartCoroutine(Spawn8());
+   }
+   private IEnumerator Spawn8()
+   {
+      yield return new WaitForSeconds(_timeWaveSpawn);
+      
+      for (int i = 0; i < _enemyV8Quantity; i++)
+      {
+         Instantiate(_enemyV8, transform.position, Quaternion.identity);
+         yield return new WaitForSeconds(_timeEnemySpawn);
+      }
+      
+      yield return new WaitForSeconds(_timeWaveSpawn);
+      
+      _uiController.GameWin();
    }
 
    #endregion
