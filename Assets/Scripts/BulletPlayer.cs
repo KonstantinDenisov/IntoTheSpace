@@ -9,7 +9,7 @@ public class BulletPlayer : MonoBehaviour
 
     [SerializeField] private float _speed;
     [SerializeField] private float _lifeTime;
-    [SerializeField] private int _damage;
+    [SerializeField] public int Damage;
     private Rigidbody2D _rb;
 
     #endregion
@@ -32,7 +32,7 @@ public class BulletPlayer : MonoBehaviour
             
             if (enemyHp != null)
             { 
-                enemyHp.ApplyDamage(_damage);
+                enemyHp.ApplyDamage(Damage);
             }
         }
     }

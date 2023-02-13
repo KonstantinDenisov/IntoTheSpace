@@ -8,6 +8,7 @@ public class EnemyHP : MonoBehaviour
     [SerializeField] public int StartHp;
     private int _currentHP;
     private StatisticsService _statisticsService;
+    private UltaService _ultaService;
 
     #endregion
 
@@ -28,6 +29,14 @@ public class EnemyHP : MonoBehaviour
     private void Start()
     {
         _statisticsService = FindObjectOfType<StatisticsService>();
+        
+        _ultaService = FindObjectOfType<UltaService>();
+        _ultaService.AllEnemys.Add(this);
+    }
+
+    private void OnDestroy()
+    {
+        _ultaService.AllEnemys.Remove(this);
     }
 
     #endregion
@@ -38,12 +47,16 @@ public class EnemyHP : MonoBehaviour
     public void ApplyDamage(int damage)
     {
         _currentHP = _currentHP - damage;
+        
         if (_currentHP <= 0)
         {
             _statisticsService.ChangeScore(StartHp);
             Destroy(gameObject); 
         }
+        
         OnHPChenge?.Invoke(_currentHP);
+        _ultaService.AddUltaPersent(5);
+
     }
 
     #endregion
