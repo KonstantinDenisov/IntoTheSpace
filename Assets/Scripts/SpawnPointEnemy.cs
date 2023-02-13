@@ -67,6 +67,30 @@ public class SpawnPointEnemy : MonoBehaviour
          Instantiate(_enemyV2, transform.position, Quaternion.identity);
          yield return new WaitForSeconds(_timeEnemySpawn);
       }
+      
+      StartCoroutine(Spawn3());
+   }
+   
+   private IEnumerator Spawn3()
+   {
+      yield return new WaitForSeconds(_timeWaveSpawn);
+      
+      for (int i = 0; i < _enemyV3Quantity; i++)
+      {
+         Instantiate(_enemyV3, transform.position, Quaternion.identity);
+         yield return new WaitForSeconds(_timeEnemySpawn);
+      }
+   }
+   
+   private IEnumerator Spawn4()
+   {
+      yield return new WaitForSeconds(_timeWaveSpawn);
+      
+      for (int i = 0; i < _enemyV4Quantity; i++)
+      {
+         Instantiate(_enemyV4, transform.position, Quaternion.identity);
+         yield return new WaitForSeconds(_timeEnemySpawn);
+      }
    }
 
    #endregion
