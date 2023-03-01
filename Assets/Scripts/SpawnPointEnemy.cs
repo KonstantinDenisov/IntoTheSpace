@@ -26,8 +26,8 @@ public class SpawnPointEnemy : MonoBehaviour
    [SerializeField] private int _enemyV6Quantity;
    [SerializeField] private int _enemyV7Quantity;
    [SerializeField] private int _enemyV8Quantity;
-
-   private UiController _uiController;
+   
+   private GameWinScreenService _gameWinScreenService;
 
    #endregion
 
@@ -35,7 +35,7 @@ public class SpawnPointEnemy : MonoBehaviour
 
    private void Start()
    {
-      _uiController = FindObjectOfType<UiController>();
+      _gameWinScreenService = FindObjectOfType<GameWinScreenService>();
       
       StartCoroutine(Spawn1());
    }
@@ -146,7 +146,7 @@ public class SpawnPointEnemy : MonoBehaviour
       
       yield return new WaitForSeconds(_timeWaveSpawn);
       
-      _uiController.GameWin();
+      _gameWinScreenService.GameWin();
    }
 
    #endregion

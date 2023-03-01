@@ -6,15 +6,12 @@ public class UiController : MonoBehaviour
     #region Variables
     
     [Header("Screens")]
-    [SerializeField] private GameObject _gameWinScreen;
     [SerializeField] private GameObject _gameOverLabel;
     [SerializeField] private GameObject _startImage;
     [SerializeField] private GameObject _HUD;
 
     [Header("Buttons")]
-    [SerializeField] private Button _playAgainButton;
     [SerializeField] private Button _exitButtonGameOver;
-    [SerializeField] private Button _exitGameWinScreen;
     [SerializeField] private Button _restartGameButtonGameOver;
     [SerializeField] private Button _spaceshipV1;
     [SerializeField] private Button _spaceshipV2;
@@ -36,16 +33,12 @@ public class UiController : MonoBehaviour
 
     private void Awake()
     {
-        _gameWinScreen.SetActive(false);
         _gameOverLabel.SetActive(false);
         _HUD.SetActive(false);
         _startImage.SetActive(true);
-        
 
         _restartGameButtonGameOver.onClick.AddListener(RestartGameButtonCliced);
-        _playAgainButton.onClick.AddListener(RestartGameButtonCliced);
         _exitButtonGameOver.onClick.AddListener(ExitButtonCliced);
-        _exitGameWinScreen.onClick.AddListener(ExitButtonCliced);
         _spaceshipV1.onClick.AddListener(CreateSpaceShipV1);
         _spaceshipV2.onClick.AddListener(CreateSpaceShipV2);
     }
@@ -62,20 +55,11 @@ public class UiController : MonoBehaviour
     private void OnDestroy()
     {
         _statisticsService.OnGameOver -= GameOver;
-        _statisticsService.OnGameWinn -= GameWin;
     }
 
     #endregion
-
-
+    
     #region Public Methods
-
-    public void GameWin()
-    {
-        _gameWinScreen.SetActive(true);  
-        _pauseService.PauseSwitcher();
-        //AudioPlayer.AddWinAudioClip();
-    }
 
     public void GameOver()
     { 
