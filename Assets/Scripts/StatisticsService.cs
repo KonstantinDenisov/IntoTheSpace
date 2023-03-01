@@ -12,9 +12,6 @@ public class StatisticsService : MonoBehaviour
     #endregion
     
     #region Events
-
-    public event Action OnGameOver;
-    public event Action OnGameWinn;
     public event Action OnUpDateScore;
 
     #endregion

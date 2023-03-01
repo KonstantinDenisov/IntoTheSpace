@@ -6,21 +6,16 @@ public class UiController : MonoBehaviour
     #region Variables
     
     [Header("Screens")]
-    [SerializeField] private GameObject _gameOverLabel;
     [SerializeField] private GameObject _startImage;
-    [SerializeField] private GameObject _HUD;
+    [SerializeField] private GameObject _hud;
 
     [Header("Buttons")]
-    [SerializeField] private Button _exitButtonGameOver;
-    [SerializeField] private Button _restartGameButtonGameOver;
     [SerializeField] private Button _spaceshipV1;
     [SerializeField] private Button _spaceshipV2;
 
     [SerializeField] private GameObject _spawnPointPlayer;
     [SerializeField] private GameObject _spaceShipV1Prefab;
     [SerializeField] private GameObject _spaceShipV2Prefab;
-
-    [SerializeField] private SceneLoadingService _sceneLoadingService;
 
     private PauseService _pauseService;
     private StatisticsService _statisticsService;
@@ -33,12 +28,9 @@ public class UiController : MonoBehaviour
 
     private void Awake()
     {
-        _gameOverLabel.SetActive(false);
-        _HUD.SetActive(false);
+        _hud.SetActive(false);
         _startImage.SetActive(true);
-
-        _restartGameButtonGameOver.onClick.AddListener(RestartGameButtonCliced);
-        _exitButtonGameOver.onClick.AddListener(ExitButtonCliced);
+        
         _spaceshipV1.onClick.AddListener(CreateSpaceShipV1);
         _spaceshipV2.onClick.AddListener(CreateSpaceShipV2);
     }
@@ -52,19 +44,13 @@ public class UiController : MonoBehaviour
         _pauseService.PauseSwitcher();
     }
 
-    private void OnDestroy()
-    {
-        _statisticsService.OnGameOver -= GameOver;
-    }
-
     #endregion
     
     #region Public Methods
 
     public void GameOver()
     { 
-        _HUD.SetActive(false);
-        _gameOverLabel.SetActive(true);
+        _hud.SetActive(false);
         _pauseService.PauseSwitcher();
         //AudioPlayer.AddGameOverAudioClip();
     }
@@ -72,22 +58,6 @@ public class UiController : MonoBehaviour
     #endregion
 
     #region Private Methods
-
-    private void ExitButtonCliced()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
-    }
-
-    private void RestartGameButtonCliced()
-    {
-        _pauseService.PauseSwitcher();
-        _statisticsService.ResetStatistics();
-        _sceneLoadingService.ReloadScene();
-    }
 
     private void CreateSpaceShipV1()
     {
@@ -104,7 +74,7 @@ public class UiController : MonoBehaviour
     private void StartGame()
     {
         _startImage.SetActive(false);
-        _HUD.SetActive(true);
+        _hud.SetActive(true);
         _pauseService.PauseSwitcher();
     }
 
