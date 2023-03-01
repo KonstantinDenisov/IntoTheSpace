@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
         {
             if (col.CompareTag(Tags.Player))
             {
-                PlayerHP playerHp = col.gameObject.GetComponentInParent<PlayerHP>();
+                PlayerHp playerHp = col.gameObject.GetComponentInParent<PlayerHp>();
             
                 if (playerHp != null)
                 { 

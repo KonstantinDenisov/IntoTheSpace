@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3832365586927878541}
   - component: {fileID: 3832365586927878538}
   - component: {fileID: 1793024093}
-  - component: {fileID: 979915826}
+  - component: {fileID: -7092568709030757761}
   m_Layer: 0
   m_Name: PlayerV1
   m_TagString: Player
@@ -173,7 +173,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 100000, guid: 7d903860494d70348ae7a552781d0e21, type: 3}
   _bulletSpawnPointTransform: {fileID: 3383771223672061402}
   _attackDelay: 0.1
---- !u!114 &979915826
+--- !u!114 &-7092568709030757761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

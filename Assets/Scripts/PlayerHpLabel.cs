@@ -6,7 +6,7 @@ public class PlayerHpLabel : MonoBehaviour
     #region Variables
 
     private TextMeshProUGUI _hpLabel;
-    private PlayerHP _playerHp;
+    private PlayerHp _playerHp;
 
     #endregion
 
@@ -20,7 +20,7 @@ public class PlayerHpLabel : MonoBehaviour
 
     private void Start()
     {
-        _playerHp = FindObjectOfType<PlayerHP>();
+        _playerHp = FindObjectOfType<PlayerHp>();
         _playerHp.OnHPChenge += ChangeScore;
     }
 

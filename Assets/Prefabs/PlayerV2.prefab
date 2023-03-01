@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3861022525560348138}
   - component: {fileID: 530940684163214780}
   - component: {fileID: 117173533}
-  - component: {fileID: 117173534}
+  - component: {fileID: 7858862561918981006}
   m_Layer: 0
   m_Name: PlayerV2
   m_TagString: Player
@@ -146,7 +146,7 @@ MonoBehaviour:
   _bulletSpawnPointTransformRight: {fileID: 7270663793161539984}
   _bulletSpawnPointTransformLeft: {fileID: 6172268327882521315}
   _attackDelay: 0.2
---- !u!114 &117173534
+--- !u!114 &7858862561918981006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
