@@ -1,12 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
+[Serializable]
 public class PlayerHp : MonoBehaviour
 {
     #region Variables
 
     [SerializeField] private int _startHp;
-    private int _currentHP;
+    private int _currentHp;
     private GameOverScreenService _gameOverScreenService;
 
     #endregion
@@ -23,13 +24,14 @@ public class PlayerHp : MonoBehaviour
 
     private void Awake()
     {
-        _currentHP = _startHp;
+        _currentHp = _startHp;
     }
 
     private void Start()
     {
+        _startHp = 100;
         _gameOverScreenService = FindObjectOfType<GameOverScreenService>();
-        OnHPChenge?.Invoke(_currentHP);
+        OnHPChenge?.Invoke(_currentHp);
     }
 
     #endregion
@@ -39,13 +41,13 @@ public class PlayerHp : MonoBehaviour
 
     public void ApplyDamage(int damage)
     {
-        _currentHP = _currentHP - damage;
-        if (_currentHP <= 0)
+        _currentHp = _currentHp - damage;
+        if (_currentHp <= 0)
         {
             _gameOverScreenService.GameOver();
             Destroy(gameObject);
         }
-        OnHPChenge?.Invoke(_currentHP);
+        OnHPChenge?.Invoke(_currentHp);
     }
 
     #endregion
