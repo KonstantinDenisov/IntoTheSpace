@@ -149,12 +149,12 @@ public class UiController : MonoBehaviour
 
     private void AudioServiceON()
     {
-        _audioService.OFF = false;
+        _audioService.SoundOff = false;
     }
     
     private void AudioServiceOFF()
     {
-        _audioService.OFF = true;
+        _audioService.SoundOff = true;
     }
 
     #endregion

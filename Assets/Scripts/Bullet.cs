@@ -3,7 +3,7 @@ using Lean.Pool;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class BulletPlayer : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     #region Variables
 

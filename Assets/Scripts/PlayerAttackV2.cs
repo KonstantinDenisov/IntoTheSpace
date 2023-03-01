@@ -71,8 +71,8 @@ public class PlayerAttackV2 : MonoBehaviour
     
     private void Ulta ()
     {
-        BulletPlayer bulletPlayer = _bulletPrefab.GetComponent<BulletPlayer>();
-        _ultaService.Ulta(bulletPlayer.Damage);
+        Bullet bullet = _bulletPrefab.GetComponent<Bullet>();
+        _ultaService.Ulta(bullet.Damage);
     }
 
     #endregion

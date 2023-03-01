@@ -4145,23 +4145,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeEnemySpawn: 2
-  _timeWaveSpawn: 50
+  _timeWaveSpawn: 35
   _enemyV1: {fileID: 6709535937233394485, guid: 5d13f91b8136bc74e833aaaa29a3a033, type: 3}
   _enemyV2: {fileID: 6709535937233394485, guid: 0a8f188f15427804d97e1c709ca202f7, type: 3}
-  _enemyV3: {fileID: 0}
-  _enemyV4: {fileID: 0}
-  _enemyV5: {fileID: 0}
-  _enemyV6: {fileID: 0}
-  _enemyV7: {fileID: 0}
-  _enemyV8: {fileID: 0}
+  _enemyV3: {fileID: 6709535937233394485, guid: eb7c64a64eb5c3344bd68f4a25606f34, type: 3}
+  _enemyV4: {fileID: 6709535937233394485, guid: 6da5349eb856a2048985c18c31864a47, type: 3}
+  _enemyV5: {fileID: 6709535937233394485, guid: a6c00091abcf8ae4f8db14c8b774a840, type: 3}
+  _enemyV6: {fileID: 6709535937233394485, guid: 76354ccda8814bc46afd687494b63ff6, type: 3}
+  _enemyV7: {fileID: 6709535937233394485, guid: ff4b432dda704f2428a514a6d74e1037, type: 3}
+  _enemyV8: {fileID: 6709535937233394485, guid: 5d07d6aaa460a384987d490af6b452aa, type: 3}
   _enemyV1Quantity: 3
   _enemyV2Quantity: 5
-  _enemyV3Quantity: 0
-  _enemyV4Quantity: 0
-  _enemyV5Quantity: 0
-  _enemyV6Quantity: 0
-  _enemyV7Quantity: 0
-  _enemyV8Quantity: 0
+  _enemyV3Quantity: 4
+  _enemyV4Quantity: 6
+  _enemyV5Quantity: 8
+  _enemyV6Quantity: 12
+  _enemyV7Quantity: 8
+  _enemyV8Quantity: 6
 --- !u!1 &1682972452
 GameObject:
   m_ObjectHideFlags: 0
