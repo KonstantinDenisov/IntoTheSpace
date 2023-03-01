@@ -12,7 +12,7 @@ public class PlayerAttackV1 : MonoBehaviour
     private Transform _cachedTransform;
     private float _delayTimer;
     private AudioService _audioService;
-    private UltaService _ultaService;
+    private SpecialAttackService _specialAttackService;
 
     #endregion
 
@@ -27,7 +27,7 @@ public class PlayerAttackV1 : MonoBehaviour
     private void Start()
     {
         _audioService = FindObjectOfType<AudioService>();
-        _ultaService = FindObjectOfType<UltaService>();
+        _specialAttackService = FindObjectOfType<SpecialAttackService>();
     }
 
     private void Update()
@@ -70,7 +70,7 @@ public class PlayerAttackV1 : MonoBehaviour
     private void Ulta ()
     {
         Bullet bullet = _bulletPrefab.GetComponent<Bullet>();
-        _ultaService.Ulta(bullet.Damage);
+        _specialAttackService.SpecialAttack(bullet.Damage);
     }
 
     #endregion

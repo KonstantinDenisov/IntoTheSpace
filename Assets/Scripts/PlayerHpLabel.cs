@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class HPLabel : MonoBehaviour
+public class PlayerHpLabel : MonoBehaviour
 {
     #region Variables
 
-    private TextMeshProUGUI _HPLabel;
+    private TextMeshProUGUI _hpLabel;
     private PlayerHP _playerHp;
 
     #endregion
@@ -17,7 +15,7 @@ public class HPLabel : MonoBehaviour
     
     private void Awake()
     {
-        _HPLabel = GetComponent<TextMeshProUGUI>();
+        _hpLabel = GetComponent<TextMeshProUGUI>();
     }
 
     private void Start()
@@ -32,7 +30,7 @@ public class HPLabel : MonoBehaviour
 
     private void ChangeScore(int hp)
     {
-        _HPLabel.text = $"Player HP: {hp}";
+        _hpLabel.text = $"Player HP: {hp}";
     }
 
     #endregion

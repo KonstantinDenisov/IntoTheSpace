@@ -30,7 +30,6 @@ public class GameWinScreenService : MonoBehaviour
     {
         _pauseService = FindObjectOfType<PauseService>();
         _statisticsService = FindObjectOfType<StatisticsService>();
-        _pauseService.PauseSwitcher();
     }
 
     #endregion

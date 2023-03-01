@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour
         {
             if (col.CompareTag(Tags.Enemy))
             {
-                EnemyHP enemyHp = col.gameObject.GetComponentInParent<EnemyHP>();
+                EnemyHp enemyHp = col.gameObject.GetComponentInParent<EnemyHp>();
             
                 if (enemyHp != null)
                 { 

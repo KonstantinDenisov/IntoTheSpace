@@ -1,14 +1,14 @@
 ﻿using System;
 using UnityEngine;
 
-public class EnemyHP : MonoBehaviour
+public class EnemyHp : MonoBehaviour
 {
     #region Variables
 
     [SerializeField] public int StartHp;
     private int _currentHP;
     private StatisticsService _statisticsService;
-    private UltaService _ultaService;
+    private SpecialAttackService _specialAttackService;
 
     #endregion
 
@@ -30,13 +30,13 @@ public class EnemyHP : MonoBehaviour
     {
         _statisticsService = FindObjectOfType<StatisticsService>();
         
-        _ultaService = FindObjectOfType<UltaService>();
-        _ultaService.AllEnemys.Add(this);
+        _specialAttackService = FindObjectOfType<SpecialAttackService>();
+        _specialAttackService.AllEnemys.Add(this);
     }
 
     private void OnDestroy()
     {
-        _ultaService.AllEnemys.Remove(this);
+        _specialAttackService.AllEnemys.Remove(this);
     }
 
     #endregion
@@ -55,7 +55,7 @@ public class EnemyHP : MonoBehaviour
         }
         
         OnHPChenge?.Invoke(_currentHP);
-        _ultaService.AddUltaPersent(5);
+        _specialAttackService.AddSpecialAttackPersent(5);
 
     }
 

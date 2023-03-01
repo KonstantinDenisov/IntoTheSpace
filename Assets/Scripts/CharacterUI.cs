@@ -8,7 +8,7 @@ public class CharacterUI : MonoBehaviour
     #region Variables
 
     [SerializeField] private HpBar _hpBar;
-    [SerializeField] private EnemyHP _enemyHp;
+    [SerializeField] private EnemyHp _enemyHp;
 
     #endregion
 
