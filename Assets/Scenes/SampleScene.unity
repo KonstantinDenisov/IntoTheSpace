@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 24990266}
   _theSoundOfAGunshotClip: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
-  OFF: 0
+  SoundOff: 0
 --- !u!4 &24990268
 Transform:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 66317938}
   - component: {fileID: 66317937}
   m_Layer: 0
-  m_Name: CheckWall
+  m_Name: TheDestroyerOfObjectsGoingOverTheEdge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 121912935}
   - component: {fileID: 121912934}
   m_Layer: 5
-  m_Name: UltaPersentLabel
+  m_Name: SpecialAttackPersentLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1435,6 +1435,9 @@ GameObject:
   - component: {fileID: 562674203}
   - component: {fileID: 562674202}
   - component: {fileID: 562674206}
+  - component: {fileID: 562674207}
+  - component: {fileID: 562674209}
+  - component: {fileID: 562674208}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1540,25 +1543,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a451f958d5384ee42aaacedf909eb0ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameWinScreen: {fileID: 1180916921}
-  _gameOverLabel: {fileID: 961236323}
-  _pauseImage: {fileID: 1040752605}
   _startImage: {fileID: 899322463}
-  _HUD: {fileID: 48098376}
-  _playAgainButton: {fileID: 1805593503}
-  _resumeToGameButton: {fileID: 1468123518}
-  _exitButtonGameOver: {fileID: 1579495816}
-  _exitButtonPause: {fileID: 1271155359}
-  _exitGameWinScreen: {fileID: 1430323003}
-  _restartGameButtonGameOver: {fileID: 2039669456}
+  _hud: {fileID: 48098376}
   _spaceshipV1: {fileID: 1974852351}
   _spaceshipV2: {fileID: 1516056149}
-  _audioServiceON: {fileID: 762081014}
-  _audioServiceOFF: {fileID: 1282594109}
   _spawnPointPlayer: {fileID: 807040862}
   _spaceShipV1Prefab: {fileID: 3832365586927878537, guid: fac4c168f8740d042b256423963fbbf8, type: 3}
   _spaceShipV2Prefab: {fileID: 967869158859593140, guid: 0467a31f7b6641d4abb4add1372573e8, type: 3}
-  _sceneLoadingService: {fileID: 1682972453}
+--- !u!114 &562674207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562674201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ee1d406d0f850408041e58e7f499cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pauseImage: {fileID: 1040752605}
+  _resumeToGameButton: {fileID: 1468123518}
+  _exitButtonPause: {fileID: 1271155359}
+  _audioServiceON: {fileID: 762081014}
+  _audioServiceOFF: {fileID: 1282594109}
+--- !u!114 &562674208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562674201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8749d80c7749744380c7c9bc4d6d3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameOverLabel: {fileID: 961236323}
+  _exitButtonGameOver: {fileID: 1579495816}
+  _restartGameButtonGameOver: {fileID: 2039669456}
+  _hud: {fileID: 48098376}
+--- !u!114 &562674209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562674201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d687c9b43ff6bb74db860f2e04eca5b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameWinScreen: {fileID: 1180916921}
+  _playAgainButton: {fileID: 1805593503}
+  _exitGameWinScreen: {fileID: 1430323003}
 --- !u!1 &636113024
 GameObject:
   m_ObjectHideFlags: 0
@@ -3959,7 +3998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllEnemys: []
-  UltaPersent: 0
+  SpecialAttackPersent: 0
   _prefub: {fileID: 1591722200099909511, guid: a5b90ce0f0cf51547ae723f33a744f53, type: 3}
   _spawnPoint: {fileID: 2093514922}
 --- !u!4 &1536039761
