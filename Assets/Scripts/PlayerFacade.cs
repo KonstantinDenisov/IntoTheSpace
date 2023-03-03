@@ -3,12 +3,11 @@ using UnityEngine;
 [Serializable]
 public class PlayerFacade : MonoBehaviour
 {
-    public PlayerMovement _playerMovement;
-    public PlayerHp _playerHp;
-
-    private void Awake()
+    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private PlayerHp _playerHp;
+    
+    public void ApplyDamage(int damage)
     {
-        _playerHp = gameObject.AddComponent<PlayerHp>();
-        _playerMovement = gameObject.AddComponent<PlayerMovement>();
+       _playerHp.ApplyDamage(damage);
     }
 }

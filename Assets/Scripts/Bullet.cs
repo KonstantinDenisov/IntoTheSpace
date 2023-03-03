@@ -38,11 +38,11 @@ public class Bullet : MonoBehaviour
         {
             if (col.CompareTag(Tags.Player))
             {
-                PlayerHp playerHp = col.gameObject.GetComponentInParent<PlayerHp>();
+                PlayerFacade playerFacade = col.gameObject.GetComponentInParent<PlayerFacade>();
             
-                if (playerHp != null)
+                if (playerFacade != null)
                 { 
-                    playerHp.ApplyDamage(Damage);
+                    playerFacade.ApplyDamage(Damage);
                 }
             }
         }
