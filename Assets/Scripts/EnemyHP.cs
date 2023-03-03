@@ -8,11 +8,9 @@ public class EnemyHp : MonoBehaviour
     [SerializeField] public int StartHp;
     private int _currentHP;
     private StatisticsService _statisticsService;
-    private SpecialAttackService _specialAttackService;
 
     #endregion
-
-
+    
     #region Events
 
     public event Action<int> OnHPChenge; 
@@ -29,16 +27,8 @@ public class EnemyHp : MonoBehaviour
     private void Start()
     {
         _statisticsService = FindObjectOfType<StatisticsService>();
-        
-        _specialAttackService = FindObjectOfType<SpecialAttackService>();
-        _specialAttackService.AllEnemys.Add(this);
     }
-
-    private void OnDestroy()
-    {
-        _specialAttackService.AllEnemys.Remove(this);
-    }
-
+    
     #endregion
 
 
@@ -55,8 +45,6 @@ public class EnemyHp : MonoBehaviour
         }
         
         OnHPChenge?.Invoke(_currentHP);
-        _specialAttackService.AddSpecialAttackPersent(5);
-
     }
 
     #endregion

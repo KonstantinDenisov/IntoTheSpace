@@ -7,7 +7,7 @@ public class SpecialAttackService : MonoBehaviour
 {
   #region Variables
 
-  public List<EnemyHp> AllEnemys;
+  public List<EnemyFacade> AllEnemys;
   public int SpecialAttackPersent;
   [SerializeField] private GameObject _prefub;
   [SerializeField] private Transform _spawnPoint;
@@ -44,9 +44,9 @@ public class SpecialAttackService : MonoBehaviour
     
     int SpecialAttackDamege = damage * 3;
     
-    foreach (var enemyHp in AllEnemys)
+    foreach (var enemyFacade in AllEnemys)
     {
-      enemyHp.ApplyDamage(SpecialAttackDamege);
+      enemyFacade.ApplyDamage(SpecialAttackDamege);
     }
   }
 

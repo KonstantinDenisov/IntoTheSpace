@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 6709535937233394492}
   - component: {fileID: 1427596699974245597}
   - component: {fileID: 5691781081238952051}
+  - component: {fileID: 3809596144452711645}
   m_Layer: 0
   m_Name: EnemyV5
   m_TagString: Enemy
@@ -417,6 +418,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hpBar: {fileID: 7407320304926055280}
   _enemyHp: {fileID: 6709535937233394492}
+--- !u!114 &3809596144452711645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709535937233394485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30b16ac3caf69b4998f0baa3d8826ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyHp: {fileID: 6709535937233394492}
+  _moveDown: {fileID: 6709535937233394494}
+  _sinusoidMotion: {fileID: 6709535937233394495}
+  _enemyAttack: {fileID: 1427596699974245597}
+  _characterUI: {fileID: 5691781081238952051}
 --- !u!1 &8734583338875192184
 GameObject:
   m_ObjectHideFlags: 0
