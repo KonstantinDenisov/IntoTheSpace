@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UiController : MonoBehaviour
+public class GameUi : MonoBehaviour
 {
     #region Variables
     

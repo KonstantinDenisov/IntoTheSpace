@@ -14,7 +14,7 @@ public class SpawnPointEnemy : MonoBehaviour
 
    [SerializeField] private List <int> _enemyQuantity;
 
-   private GameWinScreenService _gameWinScreenService;
+   private GameWinScreen _gameWinScreen;
 
    #endregion
 
@@ -22,7 +22,7 @@ public class SpawnPointEnemy : MonoBehaviour
 
    private void Start()
    {
-      _gameWinScreenService = FindObjectOfType<GameWinScreenService>();
+      _gameWinScreen = FindObjectOfType<GameWinScreen>();
       
       StartCoroutine(FirstSpawn());
    }

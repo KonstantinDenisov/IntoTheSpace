@@ -8,7 +8,7 @@ public class PlayerHp : MonoBehaviour, Ihp
 
     [SerializeField] private int _startHp;
     private int _currentHp;
-    private GameOverScreenService _gameOverScreenService;
+    private GameOverScreen _gameOverScreen;
 
     #endregion
 
@@ -30,7 +30,7 @@ public class PlayerHp : MonoBehaviour, Ihp
     private void Start()
     {
         _startHp = 100;
-        _gameOverScreenService = FindObjectOfType<GameOverScreenService>();
+        _gameOverScreen = FindObjectOfType<GameOverScreen>();
         OnHPChenge?.Invoke(_currentHp);
     }
 
@@ -44,7 +44,7 @@ public class PlayerHp : MonoBehaviour, Ihp
         _currentHp = _currentHp - damage;
         if (_currentHp <= 0)
         {
-            _gameOverScreenService.GameOver();
+            _gameOverScreen.GameOver();
             Destroy(gameObject);
         }
         OnHPChenge?.Invoke(_currentHp);

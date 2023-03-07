@@ -2,52 +2,46 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameOverScreenService : MonoBehaviour
+public class GameWinScreen : MonoBehaviour
 {
-   #region Variables
-   
-    [SerializeField] private GameObject _gameOverLabel;
+  #region Variables
+  
+    [SerializeField] private GameObject _gameWinScreen;
 
     [Header("Buttons")]
-    [SerializeField] private Button _exitButtonGameOver;
-    [SerializeField] private Button _restartGameButtonGameOver;
-
-    [SerializeField] private GameObject _hud;
+    [SerializeField] private Button _playAgainButton;
+    [SerializeField] private Button _exitGameWinScreen;
 
     private PauseService _pauseService;
     private StatisticsService _statisticsService;
-    private AudioService _audioService;
-    
+
     #endregion
-
-
+    
     #region Unity Lifecycle
 
     private void Awake()
     {
-        _gameOverLabel.SetActive(false);
-
-        _restartGameButtonGameOver.onClick.AddListener(RestartGameButtonCliced);
-        _exitButtonGameOver.onClick.AddListener(ExitButtonCliced);
+        _gameWinScreen.SetActive(false);
+        _playAgainButton.onClick.AddListener(RestartGameButtonCliced);
+        _exitGameWinScreen.onClick.AddListener(ExitButtonCliced);
     }
 
     private void Start()
     {
         _pauseService = FindObjectOfType<PauseService>();
         _statisticsService = FindObjectOfType<StatisticsService>();
-        _audioService = FindObjectOfType<AudioService>();
     }
 
     #endregion
-    
+
+
     #region Public Methods
 
-    public void GameOver()
-    { 
-        _hud.SetActive(false);
-        _gameOverLabel.SetActive(true);
+    public void GameWin()
+    {
+        _gameWinScreen.SetActive(true);  
         _pauseService.PauseSwitcher();
-        //AudioPlayer.AddGameOverAudioClip();
+        //AudioPlayer.AddWinAudioClip();
     }
 
     #endregion
