@@ -36,28 +36,12 @@ public class Bullet : MonoBehaviour
     {
         if (_isEnemyBullet)
         {
-            if (col.CompareTag(Tags.Player))
-            {
-                PlayerFacade playerFacade = col.gameObject.GetComponentInParent<PlayerFacade>();
+            Ihp ihp = col.gameObject.GetComponentInParent<Ihp>();
             
-                if (playerFacade != null)
+                if (ihp != null)
                 { 
-                    playerFacade.ApplyDamage(Damage);
+                    ihp.ApplyDamage(Damage);
                 }
-            }
-        }
-
-        else
-        {
-            if (col.CompareTag(Tags.Enemy))
-            {
-                EnemyFacade enemyFacade = col.gameObject.GetComponentInParent<EnemyFacade>();
-            
-                if (enemyFacade != null)
-                { 
-                    enemyFacade.ApplyDamage(Damage);
-                }
-            }
         }
     }
 

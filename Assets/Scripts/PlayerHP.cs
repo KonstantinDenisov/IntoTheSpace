@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [Serializable]
-public class PlayerHp : MonoBehaviour
+public class PlayerHp : MonoBehaviour, Ihp
 {
     #region Variables
 
