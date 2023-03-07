@@ -1582,7 +1582,7 @@ MonoBehaviour:
   _gameOverLabel: {fileID: 961236323}
   _exitButtonGameOver: {fileID: 1579495816}
   _restartGameButtonGameOver: {fileID: 2039669456}
-  _hud: {fileID: 48098376}
+  _gameUi: {fileID: 562674206}
 --- !u!114 &562674209
 MonoBehaviour:
   m_ObjectHideFlags: 0
