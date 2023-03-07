@@ -20,6 +20,8 @@ public class GameUi : MonoBehaviour
     private PauseService _pauseService;
     private StatisticsService _statisticsService;
     private AudioService _audioService;
+
+    private bool _isHudActive;
     
     #endregion
 
@@ -48,11 +50,10 @@ public class GameUi : MonoBehaviour
     
     #region Public Methods
 
-    public void GameOver()
-    { 
-        _hud.SetActive(false);
-        _pauseService.PauseSwitcher();
-        //AudioPlayer.AddGameOverAudioClip();
+    public void HudSwitcher()
+    {
+        _isHudActive = !_isHudActive;
+        _hud.SetActive(_isHudActive);
     }
 
     #endregion

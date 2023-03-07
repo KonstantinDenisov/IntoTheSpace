@@ -11,8 +11,7 @@ public class GameOverScreen : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private Button _exitButtonGameOver;
     [SerializeField] private Button _restartGameButtonGameOver;
-
-    [SerializeField] private GameObject _hud;
+    [SerializeField] private GameUi _gameUi;
 
     private PauseService _pauseService;
     private StatisticsService _statisticsService;
@@ -43,10 +42,10 @@ public class GameOverScreen : MonoBehaviour
     #region Public Methods
 
     public void GameOver()
-    { 
-        _hud.SetActive(false);
+    {
         _gameOverLabel.SetActive(true);
         _pauseService.PauseSwitcher();
+        _gameUi.HudSwitcher();
         //AudioPlayer.AddGameOverAudioClip();
     }
 
