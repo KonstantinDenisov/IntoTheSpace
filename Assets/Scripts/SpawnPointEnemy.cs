@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class SpawnPointEnemy : MonoBehaviour
@@ -24,7 +24,7 @@ public class SpawnPointEnemy : MonoBehaviour
    {
       _gameWinScreen = FindObjectOfType<GameWinScreen>();
       
-      StartCoroutine(FirstSpawn());
+      StartCoroutine(Spawn());
    }
 
    #endregion
@@ -32,34 +32,23 @@ public class SpawnPointEnemy : MonoBehaviour
 
    #region Private Methods
 
-   private IEnumerator FirstSpawn()
+   private IEnumerator Spawn()
    {
-      yield return new WaitForSeconds(5);
-      
-      for (int i = 0; i < _enemyQuantity[0]; i++)
-      {
-         Instantiate(_enemys[0], transform.position, Quaternion.identity);
-         yield return new WaitForSeconds(_timeEnemySpawn);
-      }
-
-      int numberOfWaves = _enemys.Count;
-
-      for (int i = 1; i < numberOfWaves; i++)
+      for (int i = 0; i < _enemys.Count; i++)
       {
          yield return new WaitForSeconds(_timeWaveSpawn);
+         
+         for (int j = 0; j < _enemyQuantity[i]; j++)
+         {
+            yield return new WaitForSeconds(_timeEnemySpawn);
 
-         StartCoroutine(NextSpawn(i));
+            Instantiate(_enemys[i], transform.position, quaternion.identity);
+         }
+
       }
    }
 
-   private IEnumerator NextSpawn(int currentWaveNumber)
-   {
-      for (int i = 0; i < _enemyQuantity[currentWaveNumber]; i++)
-      {
-         Instantiate(_enemys[i], transform.position, Quaternion.identity);
-         yield return new WaitForSeconds(_timeEnemySpawn);
-      }
-   }
+  
 
    #endregion
 }
