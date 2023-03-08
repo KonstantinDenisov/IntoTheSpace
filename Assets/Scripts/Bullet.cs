@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (_isEnemyBullet)
+        if (_isEnemyBullet && col.gameObject.CompareTag(Tags.Player))
         {
             Ihp ihp = col.gameObject.GetComponentInParent<Ihp>();
             
@@ -42,6 +42,16 @@ public class Bullet : MonoBehaviour
                 { 
                     ihp.ApplyDamage(Damage);
                 }
+        }
+
+        if (!_isEnemyBullet && col.gameObject.CompareTag(Tags.Enemy))
+        {
+            Ihp ihp = col.gameObject.GetComponentInParent<Ihp>();
+            
+            if (ihp != null)
+            { 
+                ihp.ApplyDamage(Damage);
+            }
         }
     }
 
