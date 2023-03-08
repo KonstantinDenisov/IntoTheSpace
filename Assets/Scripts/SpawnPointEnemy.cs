@@ -44,7 +44,6 @@ public class SpawnPointEnemy : MonoBehaviour
 
             Instantiate(_enemys[i], transform.position, quaternion.identity);
          }
-
       }
    }
 

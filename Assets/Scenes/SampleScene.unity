@@ -4184,7 +4184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeEnemySpawn: 2
-  _timeWaveSpawn: 35
+  _timeWaveSpawn: 15
   _enemys:
   - {fileID: 6709535937233394485, guid: 5d13f91b8136bc74e833aaaa29a3a033, type: 3}
   - {fileID: 6709535937233394485, guid: 0a8f188f15427804d97e1c709ca202f7, type: 3}
