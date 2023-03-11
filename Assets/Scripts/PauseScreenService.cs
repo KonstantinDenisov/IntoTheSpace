@@ -13,7 +13,7 @@ public class PauseScreenService : MonoBehaviour
     [SerializeField] private Button _audioServiceON;
     [SerializeField] private Button _audioServiceOFF;
 
-    private PauseService _pauseService;
+    [SerializeField] private PauseService _pauseService;
     private AudioService _audioService;
     
     #endregion
@@ -32,7 +32,6 @@ public class PauseScreenService : MonoBehaviour
 
     private void Start()
     {
-        _pauseService = FindObjectOfType<PauseService>();
         _pauseService.OnPaused += Paused;
         _audioService = FindObjectOfType<AudioService>();
     }

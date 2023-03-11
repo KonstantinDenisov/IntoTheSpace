@@ -6,7 +6,7 @@ public class SpecialAttackPersentLabel : MonoBehaviour
     #region Variables
 
     private TextMeshProUGUI _specialAttackPersentLabel;
-    private SpecialAttackService _specialAttackService;
+    [SerializeField] private SpecialAttackService _specialAttackService;
 
     #endregion
 
@@ -20,7 +20,6 @@ public class SpecialAttackPersentLabel : MonoBehaviour
 
     private void Start()
     {
-        _specialAttackService = FindObjectOfType<SpecialAttackService>();
         _specialAttackService.OnSpecialAttackPersentChenget += SpecialAttackPersentChenget;
     }
 

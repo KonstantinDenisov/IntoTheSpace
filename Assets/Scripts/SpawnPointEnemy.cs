@@ -14,7 +14,7 @@ public class SpawnPointEnemy : MonoBehaviour
 
    [SerializeField] private List <int> _enemyQuantity;
 
-   private GameWinScreen _gameWinScreen;
+   [SerializeField] private GameWinScreen _gameWinScreen;
 
    #endregion
 
@@ -22,8 +22,6 @@ public class SpawnPointEnemy : MonoBehaviour
 
    private void Start()
    {
-      _gameWinScreen = FindObjectOfType<GameWinScreen>();
-      
       StartCoroutine(Spawn());
    }
 

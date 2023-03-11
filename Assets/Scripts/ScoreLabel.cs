@@ -9,7 +9,7 @@ public class ScoreLabel : MonoBehaviour
     #region Variables
 
     private TextMeshProUGUI _scoreLabel;
-    private StatisticsService _statisticsService;
+    [SerializeField] private StatisticsService _statisticsService;
 
     #endregion
 
@@ -23,7 +23,6 @@ public class ScoreLabel : MonoBehaviour
 
     private void Start()
     {
-        _statisticsService = FindObjectOfType<StatisticsService>();
         _statisticsService.OnUpDateScore += ChangeScore;
         ChangeScore();
     }

@@ -12,8 +12,8 @@ public class GameWinScreen : MonoBehaviour
     [SerializeField] private Button _playAgainButton;
     [SerializeField] private Button _exitGameWinScreen;
 
-    private PauseService _pauseService;
-    private StatisticsService _statisticsService;
+    [SerializeField] private PauseService _pauseService;
+    [SerializeField] private StatisticsService _statisticsService;
 
     #endregion
     
@@ -26,15 +26,8 @@ public class GameWinScreen : MonoBehaviour
         _exitGameWinScreen.onClick.AddListener(ExitButtonCliced);
     }
 
-    private void Start()
-    {
-        _pauseService = FindObjectOfType<PauseService>();
-        _statisticsService = FindObjectOfType<StatisticsService>();
-    }
-
     #endregion
-
-
+    
     #region Public Methods
 
     public void GameWin()
