@@ -13,13 +13,14 @@ public class GameUi : MonoBehaviour
     [SerializeField] private Button _spaceshipV1;
     [SerializeField] private Button _spaceshipV2;
 
+    [Header("Service")]
+    [SerializeField] private PauseService _pauseService;
+    [SerializeField] private StatisticsService _statisticsService;
+    private AudioService _audioService;
+
     [SerializeField] private GameObject _spawnPointPlayer;
     [SerializeField] private GameObject _spaceShipV1Prefab;
     [SerializeField] private GameObject _spaceShipV2Prefab;
-
-    private PauseService _pauseService;
-    private StatisticsService _statisticsService;
-    private AudioService _audioService;
 
     private bool _isHudActive;
     
@@ -39,8 +40,6 @@ public class GameUi : MonoBehaviour
 
     private void Start()
     {
-        _pauseService = FindObjectOfType<PauseService>();
-        _statisticsService = FindObjectOfType<StatisticsService>();
         _audioService = FindObjectOfType<AudioService>();
 
         _pauseService.PauseSwitcher();
