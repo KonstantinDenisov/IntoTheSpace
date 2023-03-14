@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class AudioService : MonoBehaviour
 {
-    #region Variables
-
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _theSoundOfAGunshotClip;
     public bool SoundOff;
+    public static AudioService Instance;
 
-    #endregion
-
-
-    #region Public Methods
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void PlaySound(AudioClip audioClip)
     {
@@ -27,6 +26,4 @@ public class AudioService : MonoBehaviour
     {
         PlaySound(_theSoundOfAGunshotClip);
     }
-
-    #endregion
 }

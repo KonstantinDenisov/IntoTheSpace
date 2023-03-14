@@ -10,7 +10,6 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private float _attackDelay;
     private Transform _cachedTransform;
     private float _delayTimer;
-    private AudioService _audioService;
 
     #endregion
 
@@ -20,11 +19,6 @@ public class EnemyAttack : MonoBehaviour
     private void Awake()
     {
         _cachedTransform = transform;
-    }
-    
-    private void Start()
-    {
-        _audioService = FindObjectOfType<AudioService>();
     }
 
     private void Update()
@@ -51,7 +45,7 @@ public class EnemyAttack : MonoBehaviour
     {
         LeanPool.Spawn(_bulletPrefab, _bulletSpawnPointTransform.position, _cachedTransform.rotation);
         _delayTimer = _attackDelay;
-        _audioService.AddTheSoundOfAGunshotClip();
+        AudioService.Instance.AddTheSoundOfAGunshotClip();
     }
 
     private void TickTimer()
