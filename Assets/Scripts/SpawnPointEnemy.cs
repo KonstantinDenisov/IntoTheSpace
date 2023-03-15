@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class SpawnPointEnemy : MonoBehaviour
 {
-   #region Variables
-
    [SerializeField] private float _timeEnemySpawn;
    [SerializeField] private float _timeWaveSpawn;
 
@@ -16,20 +14,11 @@ public class SpawnPointEnemy : MonoBehaviour
 
    [SerializeField] private GameWinScreen _gameWinScreen;
 
-   #endregion
-
-   #region Unity Life Cycle
-
    private void Start()
    {
       StartCoroutine(Spawn());
    }
-
-   #endregion
-
-
-   #region Private Methods
-
+   
    private IEnumerator Spawn()
    {
       for (int i = 0; i < _enemys.Count; i++)
@@ -44,8 +33,4 @@ public class SpawnPointEnemy : MonoBehaviour
          }
       }
    }
-
-  
-
-   #endregion
 }

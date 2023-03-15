@@ -6,15 +6,8 @@ using UnityEngine;
 
 public class ScoreLabel : MonoBehaviour
 {
-    #region Variables
-
     private TextMeshProUGUI _scoreLabel;
     [SerializeField] private StatisticsService _statisticsService;
-
-    #endregion
-
-
-    #region Unity Lifecycle
     
     private void Awake()
     {
@@ -27,15 +20,8 @@ public class ScoreLabel : MonoBehaviour
         ChangeScore();
     }
 
-    #endregion
-
-
-    #region Private Methods
-
     private void ChangeScore()
     {
         _scoreLabel.text = $"Score: {_statisticsService.Points}";
     }
-
-    #endregion
 }

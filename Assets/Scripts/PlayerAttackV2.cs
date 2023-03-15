@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class PlayerAttackV2 : MonoBehaviour
 {
-    #region Variables
-
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _bulletSpawnPointTransformCentr;
     [SerializeField] private Transform _bulletSpawnPointTransformRight;
@@ -13,12 +11,7 @@ public class PlayerAttackV2 : MonoBehaviour
     private Transform _cachedTransform;
     private float _delayTimer;
     private SpecialAttackService _specialAttackService;
-
-    #endregion
-
-
-    #region Unity Lifecycle
-
+    
     private void Awake()
     {
         _cachedTransform = transform;
@@ -42,12 +35,7 @@ public class PlayerAttackV2 : MonoBehaviour
             Ulta();
         }
     }
-
-    #endregion
-
-
-    #region Private Methods
-
+    
     private bool CanAttack()
     {
         return Input.GetButton("Fire1") && _delayTimer <= 0;
@@ -72,6 +60,4 @@ public class PlayerAttackV2 : MonoBehaviour
         Bullet bullet = _bulletPrefab.GetComponent<Bullet>();
         _specialAttackService.SpecialAttack(bullet.Damage);
     }
-
-    #endregion
 }

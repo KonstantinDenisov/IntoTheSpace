@@ -3,22 +3,12 @@ using UnityEngine;
 
 public class EnemyHp : MonoBehaviour, Ihp
 {
-    #region Variables
-
     [SerializeField] public int StartHp;
     private int _currentHp;
     private StatisticsService _statisticsService;
     private SpecialAttackService _specialAttackService;
 
-    #endregion
-    
-    #region Events
-
-    public event Action<int> OnHPChenge; 
-
-    #endregion
-    
-    #region Unity Lifecycle
+    public event Action<int> OnHPChenge;
 
     private void Awake()
     {
@@ -31,11 +21,6 @@ public class EnemyHp : MonoBehaviour, Ihp
         _specialAttackService = FindObjectOfType<SpecialAttackService>();
     }
     
-    #endregion
-
-
-    #region Public Methods
-
     public void ApplyDamage(int damage)
     {
         _currentHp = _currentHp - damage;
@@ -49,6 +34,4 @@ public class EnemyHp : MonoBehaviour, Ihp
         
         OnHPChenge?.Invoke(_currentHp);
     }
-
-    #endregion
 }

@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class GameOverScreen : MonoBehaviour
 {
-   #region Variables
-   
     [SerializeField] private GameObject _gameOverLabel;
 
     [Header("Buttons")]
@@ -17,11 +15,6 @@ public class GameOverScreen : MonoBehaviour
     private StatisticsService _statisticsService;
     private AudioService _audioService;
     
-    #endregion
-
-
-    #region Unity Lifecycle
-
     private void Awake()
     {
         _gameOverLabel.SetActive(false);
@@ -37,10 +30,6 @@ public class GameOverScreen : MonoBehaviour
         _audioService = FindObjectOfType<AudioService>();
     }
 
-    #endregion
-    
-    #region Public Methods
-
     public void GameOver()
     {
         _gameOverLabel.SetActive(true);
@@ -48,11 +37,7 @@ public class GameOverScreen : MonoBehaviour
         _gameUi.HudSwitcher();
         //AudioPlayer.AddGameOverAudioClip();
     }
-
-    #endregion
-
-    #region Private Methods
-
+    
     private void ExitButtonCliced()
     {
 #if UNITY_EDITOR
@@ -68,6 +53,4 @@ public class GameOverScreen : MonoBehaviour
         _statisticsService.ResetStatistics();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    #endregion
 }

@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class GameWinScreen : MonoBehaviour
 {
-  #region Variables
-  
     [SerializeField] private GameObject _gameWinScreen;
 
     [Header("Buttons")]
@@ -15,32 +13,20 @@ public class GameWinScreen : MonoBehaviour
     [SerializeField] private PauseService _pauseService;
     [SerializeField] private StatisticsService _statisticsService;
 
-    #endregion
-    
-    #region Unity Lifecycle
-
     private void Awake()
     {
         _gameWinScreen.SetActive(false);
         _playAgainButton.onClick.AddListener(RestartGameButtonCliced);
         _exitGameWinScreen.onClick.AddListener(ExitButtonCliced);
     }
-
-    #endregion
     
-    #region Public Methods
-
     public void GameWin()
     {
         _gameWinScreen.SetActive(true);  
         _pauseService.PauseSwitcher();
         //AudioPlayer.AddWinAudioClip();
     }
-
-    #endregion
-
-    #region Private Methods
-
+    
     private void ExitButtonCliced()
     {
 #if UNITY_EDITOR
@@ -56,6 +42,4 @@ public class GameWinScreen : MonoBehaviour
         _statisticsService.ResetStatistics();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    #endregion
 }

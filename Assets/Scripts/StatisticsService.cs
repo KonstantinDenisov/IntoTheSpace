@@ -5,28 +5,13 @@ using UnityEngine;
 
 public class StatisticsService : MonoBehaviour
 {
-    #region Variables
-    
     public int Points;
-
-    #endregion
-    
-    #region Events
     public event Action OnUpDateScore;
-
-    #endregion
-
-
-    #region Unity LifeCycle
-
+    
     private void Start()
     {
         OnUpDateScore?.Invoke();
     }
-
-    #endregion
-    
-    #region Public Methods
 
     public void ResetStatistics()
     {
@@ -38,8 +23,4 @@ public class StatisticsService : MonoBehaviour
         Points += score;
         OnUpDateScore?.Invoke();
     }
-
-    #endregion
-    
-    
 }

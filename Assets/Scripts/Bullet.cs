@@ -5,18 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Bullet : MonoBehaviour
 {
-    #region Variables
-
     [SerializeField] private float _speed;
     [SerializeField] private float _lifeTime;
     [SerializeField] public int Damage;
     [SerializeField] private bool _isEnemyBullet;
     private Rigidbody2D _rb;
-
-    #endregion
-
-
-    #region Unity Lifecycle
 
     private void Awake()
     {
@@ -55,11 +48,6 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    #endregion
-
-
-    #region Private Methods
-
     private IEnumerator LifeTimeTimer()
     {
         yield return new WaitForSeconds(_lifeTime);
@@ -71,6 +59,4 @@ public class Bullet : MonoBehaviour
     {
         LeanPool.Despawn(gameObject);
     }
-
-    #endregion
 }

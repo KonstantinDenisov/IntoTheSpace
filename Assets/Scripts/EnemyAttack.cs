@@ -3,19 +3,12 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    #region Variables
-
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _bulletSpawnPointTransform;
     [SerializeField] private float _attackDelay;
     private Transform _cachedTransform;
     private float _delayTimer;
-
-    #endregion
-
-
-    #region Unity Lifecycle
-
+    
     private void Awake()
     {
         _cachedTransform = transform;
@@ -30,12 +23,7 @@ public class EnemyAttack : MonoBehaviour
             Attack();
         }
     }
-
-    #endregion
-
-
-    #region Private Methods
-
+    
     private bool CanAttack()
     {
         return _delayTimer <= 0;
@@ -52,6 +40,4 @@ public class EnemyAttack : MonoBehaviour
     {
         _delayTimer -= Time.deltaTime;
     }
-
-    #endregion
 }

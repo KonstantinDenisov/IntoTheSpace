@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class GameUi : MonoBehaviour
 {
-    #region Variables
-    
     [Header("Screens")]
     [SerializeField] private GameObject _startImage;
     [SerializeField] private GameObject _hud;
@@ -24,11 +22,6 @@ public class GameUi : MonoBehaviour
 
     private bool _isHudActive;
     
-    #endregion
-
-
-    #region Unity Lifecycle
-
     private void Awake()
     {
         _hud.SetActive(false);
@@ -44,20 +37,12 @@ public class GameUi : MonoBehaviour
 
         _pauseService.PauseSwitcher();
     }
-
-    #endregion
     
-    #region Public Methods
-
     public void HudSwitcher()
     {
         _isHudActive = !_isHudActive;
         _hud.SetActive(_isHudActive);
     }
-
-    #endregion
-
-    #region Private Methods
 
     private void CreateSpaceShipV1()
     {
@@ -77,6 +62,4 @@ public class GameUi : MonoBehaviour
         _hud.SetActive(true);
         _pauseService.PauseSwitcher();
     }
-
-    #endregion
 }

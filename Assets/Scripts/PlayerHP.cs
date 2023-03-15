@@ -4,24 +4,12 @@ using UnityEngine;
 [Serializable]
 public class PlayerHp : MonoBehaviour, Ihp
 {
-    #region Variables
-
     [SerializeField] private int _startHp;
     private int _currentHp;
     private GameOverScreen _gameOverScreen;
 
-    #endregion
-
-
-    #region Events
-
-    public event Action<int> OnHPChenge; 
-
-    #endregion
-
-
-    #region Unity Lifecycle
-
+    public event Action<int> OnHPChenge;
+    
     private void Awake()
     {
         _currentHp = _startHp;
@@ -33,12 +21,7 @@ public class PlayerHp : MonoBehaviour, Ihp
         _gameOverScreen = FindObjectOfType<GameOverScreen>();
         OnHPChenge?.Invoke(_currentHp);
     }
-
-    #endregion
-
-
-    #region Public Methods
-
+    
     public void ApplyDamage(int damage)
     {
         _currentHp = _currentHp - damage;
@@ -49,6 +32,4 @@ public class PlayerHp : MonoBehaviour, Ihp
         }
         OnHPChenge?.Invoke(_currentHp);
     }
-
-    #endregion
 }

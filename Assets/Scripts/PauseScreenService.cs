@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class PauseScreenService : MonoBehaviour
 {
-#region Variables
-
     [SerializeField] private GameObject _pauseImage;
 
     [Header("Buttons")]
@@ -16,11 +14,6 @@ public class PauseScreenService : MonoBehaviour
     [SerializeField] private PauseService _pauseService;
     private AudioService _audioService;
     
-    #endregion
-
-
-    #region Unity Lifecycle
-
     private void Awake()
     {
         _pauseImage.SetActive(false);
@@ -40,12 +33,7 @@ public class PauseScreenService : MonoBehaviour
     {
         _pauseService.OnPaused -= Paused;
     }
-
-    #endregion
     
-    
-    #region Private Methods
-
     private void ExitButtonCliced()
     {
 #if UNITY_EDITOR
@@ -74,6 +62,4 @@ public class PauseScreenService : MonoBehaviour
     {
         _audioService.SoundOff = true;
     }
-
-    #endregion
 }

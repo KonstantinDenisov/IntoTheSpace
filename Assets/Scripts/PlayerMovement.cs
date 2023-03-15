@@ -4,14 +4,7 @@ using UnityEngine;
 [Serializable]
 public class PlayerMovement : MonoBehaviour
 {
-    #region Variables
-
     private PauseService _pauseService;
-
-    #endregion
-
-
-    #region Unity LifeCycle
 
     void Start()
     {
@@ -32,6 +25,4 @@ public class PlayerMovement : MonoBehaviour
             transform.position = currentPosition;
         }
     }
-
-    #endregion
 }

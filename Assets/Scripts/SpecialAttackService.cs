@@ -5,24 +5,12 @@ using UnityEngine;
 
 public class SpecialAttackService : MonoBehaviour
 {
-  #region Variables
-
   public List<EnemyFacade> AllEnemys;
   public int SpecialAttackPersent;
   [SerializeField] private GameObject _prefub;
   [SerializeField] private Transform _spawnPoint;
-  
-  #endregion
-
-
-  #region Enents
 
   public event Action<int> OnSpecialAttackPersentChenget;
-
-  #endregion
-
-
-  #region Public Methods
 
   public void AddSpecialAttackPersent(int persent)
   {
@@ -49,6 +37,4 @@ public class SpecialAttackService : MonoBehaviour
       enemyFacade.ApplyDamage(SpecialAttackDamege);
     }
   }
-
-  #endregion
 }

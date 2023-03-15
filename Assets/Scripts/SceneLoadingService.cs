@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoadingService : MonoBehaviour
 {
-    #region Public Methods
-
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -21,11 +19,4 @@ public class SceneLoadingService : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    public void LoadNextLevel()
-    {
-        
-    }
-
-    #endregion
 }
